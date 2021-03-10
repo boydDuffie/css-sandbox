@@ -1,0 +1,112 @@
+html {
+  background: radial-gradient(rgb(43, 42, 42), black);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+div.title-container {
+  animation: expand 0.7s ease forwards;
+}
+
+div.title-container:hover {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+div.title {
+  text-align: center;
+  padding: 3rem 4vw;
+  box-shadow: 0px 0px 25px 10px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1) translateY(0rem);
+  }
+  50% {
+    transform: scale(1.15) translateY(-3rem);
+  }
+  100% {
+    transform: scale(1) translateY(0rem);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+}
+
+.border-gradient-sunset {
+  border-image-source: linear-gradient(
+    to bottom right,
+    rgb(152, 226, 226) 0%,
+    rgb(152, 226, 226) 30%,
+    rgb(228, 167, 177) 50%,
+    rgb(228, 167, 177) 55%,
+    orange 75%
+  );
+}
+
+.text-gradient-sunset {
+  background: linear-gradient(
+    to bottom right,
+    rgb(152, 226, 226) 0%,
+    rgb(152, 226, 226) 30%,
+    rgb(228, 167, 177) 50%,
+    rgb(228, 167, 177) 55%,
+    orange 75%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1#my-name {
+  margin: auto 0 1.5rem 0;
+  font-size: 6rem;
+  letter-spacing: 1.2rem;
+  text-indent: 1.2rem;
+  font-weight: 300;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+}
+
+h2#my-role {
+  margin: 1.5rem 0 auto 0;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  text-indent: 0.5rem;
+  font-weight: 100;
+  font-family: 'Source Code Pro', monospace;
+}
+
+hr {
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+}
