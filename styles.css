@@ -267,7 +267,7 @@ div.card {
   margin: 2.5vw 0;
   border-radius: 1rem;
   padding: 1.3rem;
-  animation: drop 1s ease forwards;
+  animation: drop 0.5s ease forwards;
 }
 
 div.card h2 {
@@ -277,7 +277,7 @@ div.card h2 {
   font-weight: 700;
   letter-spacing: 0.3rem;
   padding: 0 1.5rem 1rem 1.5rem;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid #333;
 }
 
 div.card h3 {
@@ -310,13 +310,13 @@ div.card ul > li {
 }
 
 div.card:hover {
-  animation: lift 0.8s ease-out forwards;
+  animation: lift 0.5s ease forwards;
   z-index: 2;
   cursor: pointer;
 }
 
 div.card:hover h2 {
-  animation: color-bend 0.4s ease-out forwards;
+  animation: color-bend 0.5s ease forwards;
 }
 
 div.card hr {
@@ -326,7 +326,7 @@ div.card hr {
 }
 
 div.card:hover hr {
-  animation: widen 0.4s ease-out forwards, colorize 0.4s ease-out forwards;
+  animation: widen 0.5s ease forwards, colorize 0.5s ease forwards;
 }
 
 @keyframes widen {
@@ -340,7 +340,7 @@ div.card:hover hr {
 
 @keyframes drop {
   from {
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 2px 5px 20px 5px #00000050;
   }
   to {
@@ -356,17 +356,17 @@ div.card:hover hr {
     border: none;
   }
   30% {
-    transform: scale(1.3);
+    transform: scale(1.13);
     box-shadow: 2px 7px 23px 7px #00000050;
   }
   80% {
-    transform: scale(1.18);
+    transform: scale(1.09);
     box-shadow: 1px 1px 7px 0px #00000050;
   }
   100% {
     box-shadow: 2px 5px 20px 5px #00000050;
-    transform: scale(1.2);
-    border: 1px solid var(--blue);
+    transform: scale(1.1);
+    border: 1px solid rgba(152, 226, 226, 0.55);
   }
 }
 
