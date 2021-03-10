@@ -133,29 +133,42 @@ hr {
 
 a {
   font-size: 4rem;
+  padding: 0.2rem 2rem;
   /* background: linear-gradient(to left, rgb(152, 226, 226), orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: #ffa500;
+  color: rgb(228, 167, 177);
   font-family: 'Source Code Pro', monospace;
   font-weight: 800;
-  letter-spacing: 0.5rem;
-  text-indent: 0.5rem;
   text-decoration: none;
+  border: 1px solid #353535;
+  border-radius: 9999px;
 }
 
 a:hover {
-  animation: strokify 0.8s ease-out forwards;
+  border-color: #555555;
+  animation: strokify 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes strokify {
-  from {
-    -webkit-text-stroke-width: 0px;
-    -webkit-text-stroke-color: transparent;
+  0% {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(228, 167, 177);
+    color: transparent;
   }
-  to {
-    -webkit-text-stroke-width: 1px;
+  30% {
+    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: orange;
+    color: transparent;
+  }
+  60% {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(228, 167, 177);
+    color: transparent;
+  }
+  100% {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(144, 189, 189);
     color: transparent;
   }
 }
@@ -176,7 +189,6 @@ div#projects h1 {
   justify-content: flex-end;
   align-items: flex-start;
   padding-left: 8rem;
-  /* text-shadow: 2px 2px 0px orange; */
 }
 
 div.section-header {
@@ -207,13 +219,13 @@ div.rule {
 }
 
 .gradient-divider-orange {
-  background: linear-gradient(to bottom, transparent, #ffa50050);
+  background: linear-gradient(to bottom, transparent, #ffa50060);
 }
 
 div.section-contents {
   background: linear-gradient(
     to bottom,
-    #ffa50050,
+    #ffa50060,
     orange,
     rgb(228, 167, 177),
     rgb(152, 226, 226)
