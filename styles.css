@@ -24,6 +24,7 @@ div#home {
 div.title-container {
   animation: expand 0.7s ease forwards;
   margin: 12rem 0;
+  background: #252525;
 }
 
 div.title-container:hover {
@@ -134,19 +135,23 @@ hr {
 a {
   font-size: 4rem;
   padding: 0.2rem 2rem;
-  /* background: linear-gradient(to left, rgb(152, 226, 226), orange);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: rgb(228, 167, 177);
   font-family: 'Source Code Pro', monospace;
   font-weight: 800;
   text-decoration: none;
   border: 1px solid #353535;
   border-radius: 9999px;
+  margin: 0 4rem;
+  background: #222;
+}
+
+a:active:hover {
+  background-color: #333;
 }
 
 a:hover {
   border-color: #555555;
+  background: #252525;
   animation: strokify 2.5s ease-in-out infinite alternate;
 }
 
@@ -231,4 +236,15 @@ div.section-contents {
     rgb(152, 226, 226)
   );
   height: 100vh;
+}
+
+path {
+  fill: url(#grad);
+}
+
+svg {
+  opacity: 0.2;
+  position: fixed;
+  transform: scale(2) translateY(0vh);
+  z-index: -1;
 }
