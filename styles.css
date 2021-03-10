@@ -9,16 +9,25 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
+}
+
+div#home {
+  height: 90vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 div.title-container {
   animation: expand 0.7s ease forwards;
+  margin: 12rem 0;
 }
 
 div.title-container:hover {
-  animation: breathe 4s ease-in-out infinite;
+  animation: breathe 2s ease-in-out infinite alternate;
 }
 
 div.title {
@@ -36,28 +45,26 @@ div.title {
       10px -10px 25px -25px rgb(228, 167, 177),
       -10px 10px 25px -25px rgb(228, 167, 177);
   }
-  50% {
+  100% {
     transform: scale(1.15) translateY(-30px);
     box-shadow: 25px 25px 25px -25px orange,
       -25px -25px 25px -25px rgb(152, 226, 226),
       25px -25px 25px -25px rgb(228, 167, 177),
       -25px 25px 25px -25px rgb(228, 167, 177);
   }
-  100% {
-    transform: scale(1) translateY(0rem);
-    box-shadow: 10px 10px 25px -25px orange,
-      -10px -10px 25px -25px rgb(152, 226, 226),
-      10px -10px 25px -25px rgb(228, 167, 177),
-      -10px 10px 25px -25px rgb(228, 167, 177);
-  }
 }
 
 @keyframes expand {
   0% {
     transform: scaleY(0);
+    opacity: 0;
   }
   50% {
     transform: scale(1.1);
+    opacity: 1;
+  }
+  85% {
+    box-shadow: 30px 0px 50px 10px #ffffff30, -30px 0px 50px 10px #ffffff30;
   }
   100% {
     transform: scaleY(1);
@@ -100,7 +107,7 @@ h2 {
 }
 
 h1#my-name {
-  margin: auto 0 1.5rem 0;
+  margin: auto 0 1rem 0;
   font-size: 6rem;
   letter-spacing: 1.2rem;
   text-indent: 1.2rem;
@@ -110,7 +117,7 @@ h1#my-name {
 }
 
 h2#my-role {
-  margin: 1.5rem 0 auto 0;
+  margin: 2.5rem 0 auto 0;
   font-size: 3rem;
   letter-spacing: 0.5rem;
   text-indent: 0.5rem;
@@ -122,4 +129,94 @@ hr {
   border-bottom: 1px solid;
   border-image-slice: 1;
   border-width: 1px;
+}
+
+a {
+  font-size: 4rem;
+  /* background: linear-gradient(to left, rgb(152, 226, 226), orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #ffa500;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 800;
+  letter-spacing: 0.5rem;
+  text-indent: 0.5rem;
+  text-decoration: none;
+}
+
+a:hover {
+  animation: strokify 0.8s ease-out forwards;
+}
+
+@keyframes strokify {
+  from {
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: transparent;
+  }
+  to {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
+    color: transparent;
+  }
+}
+
+div#projects {
+  min-height: 100vh;
+  width: 100%;
+}
+
+div#projects h1 {
+  margin-top: 8vh;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
+  color: rgb(24, 24, 24);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 8rem;
+  /* text-shadow: 2px 2px 0px orange; */
+}
+
+div.section-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+div.rule {
+  margin-top: 8vh;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(24, 24, 24) 10%,
+    rgb(24, 24, 24) 80%,
+    transparent 90%
+  );
+  width: 60%;
+  margin-left: 2%;
+  flex-grow: 2;
+}
+
+.gradient-divider {
+  width: 100vw;
+  height: 15rem;
+}
+
+.gradient-divider-orange {
+  background: linear-gradient(to bottom, transparent, #ffa50050);
+}
+
+div.section-contents {
+  background: linear-gradient(
+    to bottom,
+    #ffa50050,
+    orange,
+    rgb(228, 167, 177),
+    rgb(152, 226, 226)
+  );
+  height: 100vh;
 }
