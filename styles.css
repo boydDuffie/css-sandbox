@@ -6,6 +6,10 @@
   --font-default: 'Courier New', Courier, monospace;
 }
 
+.hidden {
+  display: none;
+}
+
 html {
   background: radial-gradient(rgb(43, 42, 42), black);
   font-family: 'Courier New', Courier, monospace;
@@ -149,8 +153,13 @@ a {
   background: #222;
 }
 
-a:active:hover {
-  background-color: #333;
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
 }
 
 a:hover {
@@ -158,6 +167,12 @@ a:hover {
   background: #252525;
   animation: strokify 2s ease-in-out infinite alternate;
   font-style: italic;
+}
+
+a:active {
+  background-color: #333;
+  animation: shrink 0.2s ease forwards,
+    strokify 2s ease-in-out infinite alternate;
 }
 
 @keyframes strokify {
@@ -221,7 +236,7 @@ div#projects h1 {
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-left: 8rem;
+  padding-left: 10rem;
   letter-spacing: 1.75rem;
 }
 
@@ -291,7 +306,22 @@ div.card {
   margin: 2.5vw 0;
   border-radius: 1rem;
   padding: 1.3rem;
+  transform-origin: top;
   animation: drop 0.5s ease forwards;
+  transition: all 0.5s ease;
+}
+
+.card-closer {
+  font-size: 2rem;
+  padding: 0 1.5rem 1rem 0;
+}
+
+div.card-top {
+  border-bottom: 2px solid #333;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 div.card h2 {
@@ -301,7 +331,6 @@ div.card h2 {
   font-weight: 700;
   letter-spacing: 0.3rem;
   padding: 0 1.5rem 1rem 1.5rem;
-  border-bottom: 2px solid #333;
 }
 
 div.card h3 {
@@ -419,4 +448,32 @@ svg#sun-bg {
   position: fixed;
   transform: scale(2) translateY(0vh) translateX(0.3rem);
   z-index: -1;
+}
+
+.card.fullScreen {
+  min-width: 90vw;
+  height: 90vh;
+  margin: 0;
+  animation: unset;
+  margin-top: 3vh;
+  /* order: -1; */
+}
+
+.card.fullScreen:hover {
+  animation: unset;
+  cursor: unset;
+}
+
+.card.fullScreen .hidden {
+  display: block !important;
+}
+
+.card.fullScreen .card-closer:hover {
+  cursor: pointer;
+}
+
+div.card-pic {
+  background: red;
+  width: 50%;
+  height: 50%;
 }
